@@ -1,217 +1,218 @@
-@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:ital,wght@1,100&family=Rubik+Glitch&display=swap');
+.orb-canvas {
+  background-image: url("https://akm-img-a-in.tosshub.com/indiatoday/images/story/201707/ir1_647_070417025351.jpg?size=690:388");
+  opacity: 0.9;
+  background-size: cover;
+}
+
+:root {
+  --dark-color: hsl(var(--hue), 100%, 9%);
+  --light-color: hsl(var(--hue), 95%, 98%);
+  --base: hsl(var(--hue), 95%, 50%);
+  --complimentary1: hsl(var(--hue-complimentary1), 95%, 50%);
+  --complimentary2: hsl(var(--hue-complimentary2), 95%, 50%);
+
+  --font-family: "Poppins", system-ui;
+
+  --bg-gradient: linear-gradient(
+    to bottom,
+    hsl(var(--hue), 95%, 99%),
+    hsl(var(--hue), 95%, 84%)
+  );
+}
 
 * {
-    padding: 0;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html { font-size: 62.5% }
-
-.container {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden !important;
-    margin: 0;
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.content {
-    text-align: left;
-    padding-right: 250px;
-    padding-left: 250px;
+body {
+  max-width: 1920px;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  font-family: var(--font-family);
+  color: var(--dark-color);
+  background: var(--bg-gradient);
 }
 
-.content h1 {
-    font-size: 5rem;
-    
-    color: #fff;
-    margin-bottom: 50px;
+.orb-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
 }
 
-.content h3 {
-    font-size: 3.5rem;
-    color: #fff;
-    margin-bottom: 50px;
+strong {
+  font-weight: 600;
 }
 
-.content a {
-    font-size: 2.3rem;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-    border: 2px solid #fff;
-    padding: 15px 25px;
-    border-radius: 50px;
-    transition: 0.3s;
+.overlay {
+  width: 100%;
+  max-width: 1140px;
+  max-height: 640px;
+  padding: 8rem 6rem;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
-.content a:hover {
-    background-color: white;
-    color: black;
+.overlay__inner {
+  max-width: 36rem;
 }
 
-.background-clip {
-    width: 100%;
+.overlay__title {
+  font-size: 1.875rem;
+  line-height: 2.75rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 2rem;
 }
 
-.video_container {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    z-index: -10;
-    overflow: hidden;
+.text-gradient {
+  background-image: linear-gradient(
+    45deg,
+    var(--base) 25%,
+    var(--complimentary2)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
-.navbar {
-    position: absolute;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.1);
-    width: 100vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 1;
-    overflow: hidden;
-    padding: 15px;
-    position: fixed;
+.overlay__description {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  margin-bottom: 3rem;
 }
 
-.navbar ul {
-    font-weight: bold;
-    list-style-type: none;
-    background-color: transparent;
-    padding: 0px;
-    margin: 0px;
-    display: flex;
-    justify-content: space-around;
-    margin: 0 20px;
+.overlay__btns {
+  width: 100%;
+  max-width: 30rem;
+  display: flex;
 }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    display: block;
-    text-align: center;
-    transition: .3s;
+.overlay__btn {
+  width: 50%;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--light-color);
+  background: var(--dark-color);
+  border: none;
+  border-radius: 0.5rem;
+  transition: transform 150ms ease;
+  outline-color: hsl(var(--hue), 95%, 50%);
 }
 
-.navbar a:hover {
-    color: gold;
+.overlay__btn:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
-.logo {
-    position: relative;
-    padding-left: 10px;
-    height: 70px;
-    width: 100px;
-    margin: 0 20px;
+.overlay__btn--transparent {
+  background: transparent;
+  color: var(--dark-color);
+  border: 2px solid var(--dark-color);
+  border-width: 2px;
+  margin-right: 0.75rem;
 }
 
-/* Respomsive media queries */
-
-/* 4k Screens */
-@media only screen and (max-width: 2560px){
-    .navbar a{
-        font-size: 2.2rem;
-        padding: 15px 25px;
-    }
-    .container{
-        padding: 0%;
-    }
-    .content h1{
-        font-size: 5rem;
-    }
-    .content h3{
-        font-size: 4.9rem;
-    }
-    .content a{
-        font-size: 2.6rem;
-    }
+.overlay__btn-emoji {
+  margin-left: 0.375rem;
 }
 
-/* Large Laptops */
-@media only screen and (max-width: 1440px) {
-    .navbar a{
-        font-size: 1.6rem;
-        padding: 15px 18px;
-    }
-    .container{
-        padding: 0%;
-    }
-    .content h1{
-        font-size: 5rem;
-    }
-    .content h3{
-        font-size: 2.8rem;
-    }
-    .content a{
-        font-size: 1.8rem;
-    }
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Laptop screens */
-@media only screen and (max-width: 1230px) {
-    .navbar a{
-        font-size: 1.2rem;
-        padding: 15px 18px;
-    }
-    .container{
-        padding: 0%;
-    }
-    .content{
-        padding: 0px 100px;
-    }
-    .content h1{
-        font-size: 5rem;
-    }
-    .content h3{
-        font-size: 2rem;
-    }
-    .content a{
-        font-size: 1.2rem;
-    }
-}
-
-/* Tablets */
-@media only screen and (max-width: 745px) {
-    .navbar a{
-        font-size: 0.8rem;
-        padding: 15px 18px;
-    }
-    .container{
-        padding: 0%;
-    }
-    .content h1{
-        font-size: 4rem;
-    }
-    .content h3{
-        font-size: 1.4rem;
-    }
-    .content a{
-        font-size: 0.8rem;
-        padding: 10px 20px;
-    }
-}
-
-/* Mobiles */
-@media only screen and (max-width: 745px) {
-    .content{
-        padding: 0px 40px;
-    }
-}
-
-/* Background video switching to portrait */
-@media screen and (orientation: portrait) {
-    .background-clip{
-      height: 100vh !important;
-      width: auto !important;
-      /* left: 50%;
-      top: 0;
-      transform: translateX(-50%); */
-    }
+/* Not too many browser support this yet but it's good to add! */
+@media (prefers-contrast: high) {
+  .orb-canvas {
+    display: none;
   }
+}
+
+@media only screen and (max-width: 1140px) {
+  .overlay {
+    padding: 8rem 4rem;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  body {
+    padding: 1.5rem;
+  }
+
+  .overlay {
+    padding: 4rem;
+    height: auto;
+  }
+
+  .overlay__title {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .overlay__description {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .overlay {
+    padding: 1.5rem;
+  }
+
+  .overlay__btns {
+    flex-wrap: wrap;
+  }
+
+  .overlay__btn {
+    width: 100%;
+    font-size: 0.75rem;
+    margin-right: 0;
+  }
+
+  .overlay__btn:first-child {
+    margin-bottom: 1rem;
+  }
+}
+
+.powered-by {
+  position: absolute;
+  bottom: 10px;
+  right: 10px; /* Position at the right */
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+}
