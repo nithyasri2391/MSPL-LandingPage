@@ -1,67 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PowerBI Voice</title>
-</head>
-<body>
-  
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,intial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Patil's Assistant</title>
+    </head>
+    <body>
+        
+       
+        <div class="container">
+            <div class="video_container">
+                <video autoplay loop muted plays-inline class="background-clip" src="video6143031417833000117.mp4">
+                </video>
+            </div>
+            <div class="content">
+                <h1>Welcome to PowerBI Navigator</h1>
+                <h3></h3>
+                
+                <a href="explore.html">Show Commands</a>
+            </div>
 
-<link rel="stylesheet" href="style.css">
-<!-- Canvas -->
-<canvas class="orb-canvas"></canvas>
-<!-- Overlay -->
-<div class="overlay">
-  <!-- Overlay inner wrapper -->
-  <div class="command" hidden>
-    <ul>
-      <li style="animation: fade-in 1s ease-in-out;">Start Patil Group</li>
-      <li style="animation: fade-in 1s ease-in-out;">Open Sales Analysis Dashboard</li>
-      <li style="animation: fade-in 1s ease-in-out;">Open Sales Quantity Dashboard</li>
-      <li style="animation: fade-in 1s ease-in-out;">Open Average Price Dashboard</li>
-      <li style="animation: fade-in 1s ease-in-out;">Open Working Capital Dashboard</li>
-      <li style="animation: fade-in 1s ease-in-out;">Open Sales Comparision</li>
-      <li style="animation: fade-in 1s ease-in-out;">Open Customer Sales Dashboard</li>
-      <li style="animation: fade-in 1s ease-in-out;">Open Comparision Dashboard</li>
-      <li style="animation: fade-in 1s ease-in-out;">Open Race Dashboard</li>
-      <li style="animation: fade-in 1s ease-in-out;">Stop / Terminate / Exit</li>
-    
-    </ul>
-  </div>
-  <div class="overlay__inner">
-    <!-- Title -->
-    <h1 class="overlay__title">
-      Navigate Through PowerBI Dashboards using Your
-      <span class="">Voice</span>
-    </h1>
-    <!-- Description -->
-    <p class="overlay__description">
-      We're not just engineering; we're revolutionizing railway engineering in India through our journey of
-      <strong>digital transformation.</strong>
-    </p>
-    <!-- Powered by -->
-    <div class="powered-by">Powered by Sria InfoTech Pvt Ltd</div>
-    <!-- Buttons -->
-    <div class="overlay__btns">
 
-      <button class="overlay__btn overlay__btn--transparent">
-        <a href="https://georgefrancis.dev/writing/create-a-generative-landing-page-and-webgl-powered-background/" target="_blank">
-          Read The Docs
-        </a>
-      </button>
-
-      <button class="overlay__btn overlay__btn--transparent" onclick="showCommands()">Show Commands</button>
-
-    </div>
-  </div>
-</div>
-</body>
-<script src="script.js"></script>
-<script>
-  function showCommands() {
-    var commandDiv = document.querySelector('.command');
-    commandDiv.hidden = !commandDiv.hidden;
-  }
-</script>
+        </div>
+    </body>
 </html>
+  
