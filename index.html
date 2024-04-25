@@ -1,29 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width,intial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>MSPL's Assistant</title>
-    </head>
-    <body>
-        
-       
-        <div class="container">
-            <div class="video_container">
-                <video autoplay loop muted plays-inline class="background-clip" src="video6143031417833000117.mp4">
-                </video>
-            </div>
-            <div class="content">
-                <h1>Welcome to PowerBI Navigator</h1>
-                <h3></h3>
-                
-                <a href="explore.html">Show Commands</a>
-            </div>
-
-
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MSPL's Assistant</title>
+</head>
+<body>
+    <div class="container">
+        <div class="video_container">
+            <video autoplay loop muted plays-inline class="background-clip" src="video6143031417833000117.mp4"></video>
         </div>
-    </body>
+        <div class="content">
+            <h1>Welcome to PowerBI Navigator</h1>
+            <h3></h3>   
+            <button class="button" data-text="Awesome" onclick="toggleFruitList()">
+                <span class="actual-text">&nbsp;Commands&nbsp;</span>
+                <span aria-hidden="true" class="hover-text">&nbsp;Commands&nbsp;</span>
+              </button>
+              <div id="fruit-list" style="height: 0; overflow: hidden;">
+                <ul>
+                    <li>Start MSPL</li>
+                    <li>Open Sales Analysis </li>
+                    <li>Open Sales Revenue </li>
+                    <li>Open Inventory Dashboard </li>
+                    <li>Open Customer Sales Analysis </li>
+                    <li>Open Regional Sales Dashboard</li>
+                    <li>Stop / Terminate / Exit</li>
+                </ul>
+            </div>
+        </div>
+            <!-- Fruit List -->
+
+    </div>
+
+
+
+    <script>
+        function toggleFruitList() {
+            var fruitList = document.getElementById("fruit-list");
+            if (fruitList.style.height === "0px" || fruitList.style.height === "") {
+                fruitList.style.height = fruitList.scrollHeight + "px";
+            } else {
+                fruitList.style.height = "0px";
+            }
+        }
+    </script>
+</body>
 </html>
-  
