@@ -306,3 +306,16 @@ html { font-size: 62.5% }
 #fruit-list ul li:hover {
     background-color: #e0e0e0; /* Highlight background color on hover */
 }
+
+.powered-by {
+  position: absolute;
+  bottom: 10px;
+  right: 10px; /* Position at the right */
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+}
